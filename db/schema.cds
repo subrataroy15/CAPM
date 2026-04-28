@@ -8,7 +8,6 @@ entity Books {
         price       : Price;
         isHardcover : Boolean;
 }
-
 type Genre     : Integer enum {
     fiction     = 1;
     non_fiction = 2;
