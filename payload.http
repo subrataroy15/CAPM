@@ -1,3 +1,38 @@
-@baseUrl = http://localhost:4004/odata/v4
+# In the following requests the variable baseUrl is used.
+# Its value is set here.
+@baseUrl = http://localhost:4004
 
-GET {{baseUrl}}/hello/sayHello(name='World')
+
+### ------------------------------------------------------------------------
+# Get Service Document
+GET {{baseUrl}}/admin
+
+
+### ------------------------------------------------------------------------
+# Get Service Metadata Document
+GET {{baseUrl}}/admin/$metadata
+
+
+### ------------------------------------------------------------------------
+# Get all books
+GET {{baseUrl}}/admin/Books
+
+
+### ------------------------------------------------------------------------
+# Get all authors
+GET {{baseUrl}}/admin/Authors
+
+
+### ------------------------------------------------------------------------
+# Create a new author, then update it and finally delete it again
+# @name createNewAuthor
+POST {{baseUrl}}/admin/Authors
+Content-Type: application/json
+
+{
+  "name": "Friedrich Schiller",
+  "dateOfBirth": "1759-11-10",
+  "dateOfDeath": "1805-05-09"
+}
+
+###
